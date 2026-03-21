@@ -35,7 +35,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import warnings
 warnings.filterwarnings('ignore')
 
-df=pd.read_csv('/content/YourCabs.csv')
+df=pd.read_csv('YourCabs.csv')
 df.head()
 
 df.shape
