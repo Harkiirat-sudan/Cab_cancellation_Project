@@ -151,7 +151,7 @@ sns.boxplot(x=df_encoded['to_long'])
 plt.title("Boxplot: to_long")
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 """# Outlier Removal"""
 
@@ -225,7 +225,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=[0,1], yticklabel
 plt.xlabel("Predicted Label")
 plt.ylabel("True Label")
 plt.title("Confusion Matrix")
-plt.show()
+# plt.show()
 
 print("Classification Report:\n")
 print(classification_report(y_test, y_pred))
@@ -270,7 +270,7 @@ sns.heatmap(confusion_matrix(y_test, y_pred_dt), annot=True, fmt='d', cmap='Oran
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Decision Tree - Confusion Matrix")
-plt.show()
+# plt.show()
 
 # Classification report
 print("\nClassification Report:\n")
@@ -321,6 +321,14 @@ print("Test Accuracy :", round(accuracy_score(y_test, y_test_pred_pruned), 4))
 """
 
 import joblib
+# Save the models
 joblib.dump(model, 'logistic_regression_model.pkl')
-joblib.dump(dt_model, 'decision_tree_model.pkl')
-print("Models saved successfully!")
+joblib.dump(pruned_dt_model, 'decision_tree_model.pkl') # Using pruned model as it's better according to README
+
+# Save the scaler
+joblib.dump(scaler, 'scaler.pkl')
+
+# Save the feature columns to ensure consistency in the app
+joblib.dump(X.columns.tolist(), 'model_columns.pkl')
+
+print("Models, scaler, and columns saved successfully!")
