@@ -1,5 +1,7 @@
 # Cab Cancellation Prediction Project
 
+**Live App:** [https://cabcancellationproject-xotkwdthzlts3vqybycqhz.streamlit.app/](https://cabcancellationproject-xotkwdthzlts3vqybycqhz.streamlit.app/)
+
 ## Overview
 This project aims to develop a machine learning model that predicts whether a cab booking will be canceled. By predicting cancellations in advance, cab service companies can reduce operational disruptions, improve customer satisfaction, and allocate resources more efficiently.
 
